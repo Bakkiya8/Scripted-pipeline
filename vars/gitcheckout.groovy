@@ -1,4 +1,4 @@
-def gitscm(Map inputparams)
+def call(Map inputparams)
 {
 checkout(
 [$class: 'GitSCM', 
