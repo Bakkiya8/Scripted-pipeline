@@ -1,5 +1,4 @@
-def call(String params1)
+def call(Map params1)
 {
-  echo $params1
-sh 'docker build -t ${params1}:$BUILD_NUMBER .'
+sh 'docker build -t params1.Imagename:$BUILD_NUMBER .'
 }
