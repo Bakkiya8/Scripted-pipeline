@@ -1,5 +1,5 @@
-def call()
+def call(string imgname)
 {
-  def dockerImage = docker.build("bhakya/myhello:${env.BUILD_ID}")
+  def dockerImage = docker.build("${imgname}:${env.BUILD_ID}")
       dockerImage.push()
 }
