@@ -1,4 +1,4 @@
-def call(Map imgname=[:],Closure body={})
+def Builddocker(Map imgname=[:],Closure body={})
 {
  // def dockerImage = docker.build("${imgname.imagename}:${env.BUILD_ID}")
      // dockerImage.push()
