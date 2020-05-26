@@ -1,4 +1,4 @@
-def call(Map params1)
+def call()
 {
 sh 'docker build -t params1.Imagename:$BUILD_NUMBER .'
 }
