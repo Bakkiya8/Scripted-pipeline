@@ -1,4 +1,5 @@
 def call()
 {
-sh 'docker build -t params1.Imagename:$BUILD_NUMBER .'
+  def dockerImage = docker.build("bhakya/myhello:${env.BUILD_ID}")
+      dockerImage.push()
 }
