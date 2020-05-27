@@ -1,1 +1,47 @@
-
+ @Library('Pipeline-library@master')_
+ 
+node
+{
+    try{
+    stage('gitcheckout')
+    {
+        gitcheckout([
+            branch: "master",
+            url: "https://github.com/Bakkiya8/Scripted-pipeline.git"]
+            )
+    }
+    
+    stage('Maven Build')
+    {
+        Mavenbuild()
+    }
+    
+  //  stage('SonarQube Integration')
+  //  {
+     //   Sonarscan()
+   // }
+    
+  //  stage('Qualitygate check')
+   // {
+    //   Qualitygate()
+  //  }
+    
+    stage('Tag Docker')
+    {
+       TagDocker([imagename: "bhakya/test"]) 
+    }
+    
+    
+      post { 
+        always { 
+            echo 'I will always say Hello again!'
+        }
+    }
+    }
+    catch(exc)
+    {
+            throw exc
+            deleteDir()
+    }
+}
+ 
