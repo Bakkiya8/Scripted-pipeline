@@ -28,7 +28,7 @@ node
     
     stage('Tag Docker')
     {
-       TagDocker([imagename: "bhakya/test"]) 
+       TagDocker([imagename: "bhakya/test",port1:"8050",containerport:"8050",contname:"apptest"]) 
     }
     
     stage ('Set build retention') {
