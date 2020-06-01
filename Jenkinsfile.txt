@@ -16,15 +16,15 @@ node
         Mavenbuild()
     }
     
-  //  stage('SonarQube Integration')
-  //  {
-     //   Sonarscan()
-   // }
+    stage('SonarQube Integration')
+    {
+        Sonarscan()
+    }
     
-  //  stage('Qualitygate check')
-   // {
-    //   Qualitygate()
-  //  }
+   stage('Qualitygate check')
+    {
+       Qualitygate()
+    }
     
     stage('Tag Docker')
     {
